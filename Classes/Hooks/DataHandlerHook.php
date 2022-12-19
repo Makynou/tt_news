@@ -122,7 +122,7 @@ class DataHandlerHook
 
         if ($table == 'tt_news') {
             // copy "type" field in localized records
-            if (!is_int($id) && $fieldArray['l18n_parent']) { // record is a new localization
+            if (!is_int($id) && isset($fieldArray['l18n_parent'])) { // record is a new localization
                 $rec = BackendUtility::getRecord(
                     $table,
                     $fieldArray['l18n_parent'],
